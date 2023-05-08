@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+import time
 
 username = sys.argv[1]
 password = sys.argv[2]
@@ -25,6 +26,20 @@ driver.get("https://banweb.lau.edu.lb/prod/bwskfcls.p_sel_crse_search")
 dropdown = driver.find_element(By.ID,'term_input_id')
 select = Select(dropdown)
 select.select_by_visible_text('Fall 2023 (View only)')
+
+btn = driver.find_element(By.CSS_SELECTOR, "input[type='submit'][value='Submit']")
+btn.click()
+
+btn = driver.find_element(By.CSS_SELECTOR, "input[type='submit'][value='Advanced Search']")
+btn.click()
+
+subject = Select(driver.find_element(By.ID,'subj_id'))
+subject.select_by_visible_text('Computer Science')
+
+campus = Select(driver.find_element(By.ID,'camp_id'))
+campus.select_by_visible_text('Byblos')
+
+btn = driver.find_element(By.CSS_SELECTOR, "input[type='submit'][value='Section Search']")
 
 
 driver.close()
