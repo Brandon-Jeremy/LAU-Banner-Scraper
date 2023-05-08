@@ -40,6 +40,7 @@ campus = Select(driver.find_element(By.ID,'camp_id'))
 campus.select_by_visible_text('Byblos')
 
 btn = driver.find_element(By.CSS_SELECTOR, "input[type='submit'][value='Section Search']")
+btn.click()
 
 
 driver.close()
