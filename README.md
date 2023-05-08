@@ -1,6 +1,3 @@
-# LAU-Banner-Scraper
-Web Scraper for course listed on LAU's Banner page
-=======
 # LAU Course Scraper
 
 This Python script scrapes the LAU course website and exports the data to a CSV file.
